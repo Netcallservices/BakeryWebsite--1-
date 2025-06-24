@@ -8,8 +8,13 @@ import FadeIn from "@/components/animations/fade-in";
 import StaggerChildren from "@/components/animations/stagger-children";
 import FloatAnimation from "@/components/animations/float-animation";
 import { motion } from "framer-motion";
+import { useCart } from "@/contexts/cart-context";
+import { ShoppingBag } from "lucide-react";
+import AddToCartButton from "@/components/add-to-cart-button";
 
 export default function MenuPage() {
+  const { addItem } = useCart();
+
   // Group menu items by category
   const categories = menuItems.reduce((acc, item) => {
     if (!acc[item.category]) {
@@ -73,56 +78,59 @@ export default function MenuPage() {
 
         {/* Menu Categories */}
         {Object.entries(categories).map(([category, items], categoryIndex) => (
-          <div
+          <FadeIn
             key={category}
-            id={category.toLowerCase().replace(/\s+/g, "-")}
+            direction="up"
+            delay={categoryIndex * 0.1}
             className="mb-16"
           >
-            <FadeIn direction="up" delay={categoryIndex * 0.1} className="">
+            <div id={category.toLowerCase().replace(/\s+/g, "-")}>
               <h2 className="text-3xl font-bold text-primary mb-8 text-center">
                 {category}
               </h2>
+            </div>
 
-              <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {items.map((item) => (
-                  <motion.div
-                    key={item.id}
-                    variants={{
-                      hidden: { opacity: 0, y: 50 },
-                      visible: {
-                        opacity: 1,
-                        y: 0,
-                        transition: { duration: 0.5, ease: "easeOut" },
-                      },
-                    }}
-                  >
-                    <Card className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                      <div className="relative h-64">
-                        <Image
-                          src={item.image}
-                          alt={item.name}
-                          fill
-                          className="object-cover transition-transform duration-700 hover:scale-110"
-                        />
-                        {item.isPopular && (
-                          <div className="absolute top-4 right-4 bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                            Popular
-                          </div>
-                        )}
-                      </div>
-                      <CardContent className="p-6">
-                        <div className="flex justify-between items-start mb-2">
-                          <h3 className="text-xl font-bold text-primary">
-                            {item.name}
-                          </h3>
-                          <span className="text-lg font-semibold text-amber-600">
-                            ₹{item.price}
-                          </span>
+            <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {items.map((item) => (
+                <motion.div
+                  key={item.id}
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      transition: { duration: 0.5, ease: "easeOut" },
+                    },
+                  }}
+                >
+                  <Card className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div className="relative h-64">
+                      <Image
+                        src={item.image}
+                        alt={item.name}
+                        fill
+                        className="object-cover transition-transform duration-700 hover:scale-110"
+                      />
+                      {item.isPopular && (
+                        <div className="absolute top-4 right-4 bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                          Popular
                         </div>
-                        <p className="text-gray-600 mb-4">{item.description}</p>
+                      )}
+                    </div>
+                    <CardContent className="p-6">
+                      <div className="flex justify-between items-start mb-2">
+                        <h3 className="text-xl font-bold text-primary">
+                          {item.name}
+                        </h3>
+                        <span className="text-lg font-semibold text-amber-600">
+                          ₹{item.price}
+                        </span>
+                      </div>
+                      <p className="text-gray-600 mb-4">{item.description}</p>
+                      <div className="flex gap-2">
                         <Button
                           asChild
-                          className="w-full bg-primary hover:bg-primary/90 text-white group"
+                          className="flex-1 bg-primary hover:bg-primary/90 text-white group"
                         >
                           <Link
                             href={`/order?item=${item.id}`}
@@ -143,29 +151,33 @@ export default function MenuPage() {
                             </motion.span>
                           </Link>
                         </Button>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                ))}
-              </StaggerChildren>
-            </FadeIn>
-          </div>
+                        <AddToCartButton
+                          productId={item.id}
+                          className="bg-amber-500 hover:bg-amber-600 text-white px-3"
+                          size="default"
+                        />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </StaggerChildren>
+          </FadeIn>
         ))}
 
         {/* Full Menu Image */}
-        {/* 
         <FadeIn
           direction="up"
           className="mb-12 relative rounded-lg overflow-hidden shadow-xl"
         >
           <Image
-            src="/menu.jpeg"
+            src="/menu.jpg"
             alt="Full Menu"
             width={1200}
             height={800}
             className="w-full h-auto"
           />
-          <div className="">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
             <div className="p-8 text-white">
               <h3 className="text-2xl font-bold mb-2">Our Complete Menu</h3>
               <p className="mb-4">
@@ -182,7 +194,6 @@ export default function MenuPage() {
             </div>
           </div>
         </FadeIn>
-        */}
 
         {/* Custom Orders */}
         <FadeIn direction="up" className="bg-amber-50 rounded-xl p-8 mb-12">

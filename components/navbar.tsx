@@ -74,10 +74,12 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-          <Button className="bg-amber-500 hover:bg-amber-600 text-white rounded-full">
-            <ShoppingBag className="mr-2 h-4 w-4" />
-            Cart (0)
-          </Button>
+          <Link href="/cart">
+            <Button className="bg-amber-500 hover:bg-amber-600 text-white rounded-full">
+              <ShoppingBag className="mr-2 h-4 w-4" />
+              Cart (0)
+            </Button>
+          </Link>
         </nav>
 
         {/* Mobile Navigation Toggle */}
@@ -113,10 +115,12 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <Button className="bg-amber-500 hover:bg-amber-600 text-white rounded-full w-full">
-              <ShoppingBag className="mr-2 h-4 w-4" />
-              Cart (0)
-            </Button>
+            <Link href="/cart">
+              <Button className="bg-amber-500 hover:bg-amber-600 text-white rounded-full w-full">
+                <ShoppingBag className="mr-2 h-4 w-4" />
+                Cart (0)
+              </Button>
+            </Link>
           </div>
         </div>
       )}

@@ -24,6 +24,8 @@ import {
 } from "@/components/ui/card";
 import { menuItems } from "@/data/menu-items";
 import { Calendar, Clock, Minus, Plus, ShoppingBag } from "lucide-react";
+import { useCart } from "@/contexts/cart-context";
+import AddToCartButton from "@/components/add-to-cart-button";
 
 export default function OrderPage() {
   const router = useRouter();
@@ -37,6 +39,8 @@ export default function OrderPage() {
   const [specialInstructions, setSpecialInstructions] = useState("");
 
   const selectedProduct = menuItems.find((item) => item.id === selectedItem);
+
+  const { addItem } = useCart();
 
   // Calculate total
   const subtotal = selectedProduct ? selectedProduct.price * quantity : 0;
@@ -57,6 +61,7 @@ export default function OrderPage() {
 
   const handleAddToCart = () => {
     if (selectedProduct) {
+      addItem(selectedProduct.id, quantity);
       alert(`${selectedProduct.name} added to cart!`);
     } else {
       alert("Please select a product first!");
@@ -156,14 +161,13 @@ export default function OrderPage() {
                     >
                       <Plus className="h-4 w-4" />
                     </Button>
-                    <Button
-                      className="ml-4 bg-amber-500 hover:bg-amber-600 text-white"
-                      onClick={handleAddToCart}
-                      disabled={!selectedProduct}
-                    >
-                      <ShoppingBag className="mr-2 h-4 w-4" />
-                      Add to Cart
-                    </Button>
+                    {selectedProduct && (
+                      <AddToCartButton
+                        productId={selectedProduct.id}
+                        quantity={quantity}
+                        className="ml-4 bg-amber-500 hover:bg-amber-600 text-white"
+                      />
+                    )}
                   </div>
                 </div>
 
@@ -285,36 +289,22 @@ export default function OrderPage() {
                     </div>
                   </>
                 ) : (
-                  <div className="text-center py-6 text-gray-500">
-                    Select a product to see the order summary
-                  </div>
+                  <p className="text-center text-gray-500">
+                    Select a product to see the summary.
+                  </p>
                 )}
               </CardContent>
 
               <CardFooter>
                 <Button
-                  className="w-full bg-primary hover:bg-primary/90 text-white"
-                  disabled={!selectedProduct}
+                  className="w-full bg-amber-500 hover:bg-amber-600 text-white text-lg py-6"
                   onClick={handlePlaceOrder}
+                  disabled={!selectedProduct || !orderDate || !orderTime}
                 >
-                  <ShoppingBag className="mr-2 h-4 w-4" />
                   Place Order
                 </Button>
               </CardFooter>
             </Card>
-
-            {/* Delivery Information */}
-            <div className="mt-6 bg-amber-50 rounded-lg p-4">
-              <h3 className="font-medium text-primary mb-2">
-                Delivery Information
-              </h3>
-              <ul className="text-sm text-gray-600 space-y-2">
-                <li>• Orders must be placed at least 24 hours in advance</li>
-                <li>• Free delivery for orders above ₹500</li>
-                <li>• Delivery available within city limits only</li>
-                <li>• Payment can be made online or cash on delivery</li>
-              </ul>
-            </div>
           </div>
         </div>
       </div>

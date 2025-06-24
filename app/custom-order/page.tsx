@@ -66,7 +66,7 @@ export default function CustomOrderPage() {
 
   const subtotal =
     basePrice + toppingsPrice + specialFrostingPrice + specialFillingPrice;
-  const deliveryFee = 100;
+  const deliveryFee = 20;
   const total = subtotal + deliveryFee;
 
   const handleToppingChange = (topping: string) => {
@@ -772,7 +772,7 @@ export default function CustomOrderPage() {
                 <li>
                   • A 50% advance payment is required to confirm your order
                 </li>
-                <li>• Free delivery for orders above ₹1500</li>
+                <li>• Free delivery for orders above ₹500</li>
                 <li>• We may contact you to discuss design details</li>
                 <li>• Prices may vary based on complexity of design</li>
               </ul>

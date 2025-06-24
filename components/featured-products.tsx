@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -8,9 +7,13 @@ import FadeIn from "@/components/animations/fade-in";
 import StaggerChildren from "@/components/animations/stagger-children";
 import FloatAnimation from "@/components/animations/float-animation";
 import { motion } from "framer-motion";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, ShoppingBag } from "lucide-react";
+import { useCart } from "@/contexts/cart-context";
+import AddToCartButton from "@/components/add-to-cart-button";
 
 export default function FeaturedProducts() {
+  const { addItem } = useCart();
+
   return (
     <section className="py-20 bg-amber-50 relative overflow-hidden">
       {/* Floating decorative elements */}
@@ -74,18 +77,25 @@ export default function FeaturedProducts() {
                     </span>
                   </div>
                   <p className="text-gray-600 mb-4">{product.description}</p>
-                  <Button
-                    asChild
-                    className="w-full bg-primary hover:bg-primary/90 text-white group"
-                  >
-                    <Link
-                      href={`/order?item=${product.id}`}
-                      className="flex items-center justify-center"
+                  <div className="flex gap-2">
+                    <Button
+                      asChild
+                      className="flex-1 bg-primary hover:bg-primary/90 text-white group"
                     >
-                      View Details
-                      <ChevronRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </Button>
+                      <Link
+                        href={`/order?item=${product.id}`}
+                        className="flex items-center justify-center"
+                      >
+                        View Details
+                        <ChevronRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                    </Button>
+                    <AddToCartButton
+                      productId={product.id}
+                      className="bg-amber-500 hover:bg-amber-600 text-white px-3"
+                      size="default"
+                    />
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>
