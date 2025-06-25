@@ -7,8 +7,10 @@
     "export": "next build",
     "start": "next start",
     "lint": "next lint",
-    "build": "rm -rf .next/cache && rm -rf cache && next build",
-    "build:cf": "rm -rf .next/cache cache .next/server && next build"
+    "build": "next build",
+    "postbuild": "next-on-pages",
+    "clean": "rm -rf .vercel/output/static/cache",
+    "deploy": "npm run build && npm run postbuild && npm run clean"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -64,6 +66,7 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.12",
     "@types/canvas-confetti": "^1.6.4",
     "@types/node": "^20",
     "@types/react": "^18",
