@@ -166,7 +166,7 @@ export default function MenuPage() {
         ))}
 
         {/* Full Menu Image */}
-        <FadeIn
+        {/* <FadeIn
           direction="up"
           className="mb-12 relative rounded-lg overflow-hidden shadow-xl"
         >
@@ -193,7 +193,7 @@ export default function MenuPage() {
               </Button>
             </div>
           </div>
-        </FadeIn>
+        </FadeIn> */}
 
         {/* Custom Orders */}
         <FadeIn direction="up" className="bg-amber-50 rounded-xl p-8 mb-12">

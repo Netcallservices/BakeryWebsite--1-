@@ -158,8 +158,8 @@ export default function AboutPage() {
               </h2>
               <p className="text-gray-600 mb-4">
                 Behind every delicious treat at Grave the Crave is our
-                passionate head baker who brings years of experience and a
-                genuine love for the craft. With formal training and a natural
+                passionate head baker Soumi, who brings years of experience and
+                a genuine love for the craft. With formal training and a natural
                 talent for creating exceptional flavors, our baker transforms
                 simple ingredients into extraordinary desserts.
               </p>

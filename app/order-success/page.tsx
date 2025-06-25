@@ -273,7 +273,7 @@ export default function OrderSuccessPage() {
                     <div>
                       <p className="font-medium">Email Us</p>
                       <p className="text-sm text-gray-600">
-                        info@gravethecrave.com
+                        gravethecrave@gmail.com
                       </p>
                     </div>
                   </div>

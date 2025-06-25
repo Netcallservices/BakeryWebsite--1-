@@ -69,7 +69,7 @@ export default function ContactSection() {
                 <div>
                   <h4 className="font-medium text-gray-900">Location</h4>
                   <p className="text-gray-600">
-                    Shri Durga Palli, Katwa, West Bengal 713130
+                    Vivekananda Palli, Saheb Bagan, Katwa, West Bengal 713130
                   </p>
                   <p className="text-gray-500 text-sm mt-1">
                     Open for pickup by appointment

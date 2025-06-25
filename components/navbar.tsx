@@ -1,10 +1,12 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useCart } from "@/contexts/cart-context";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -18,6 +20,7 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { state } = useCart();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,10 +38,10 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 bg-brown-500 right-0 z-50 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
           ? "bg-white/95 backdrop-blur-sm shadow-md py-2"
-          : "bg-primary py-4"
+          : "bg-transparent py-4"
       )}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
@@ -48,7 +51,7 @@ export default function Navbar() {
             alt="Grave the Crave Bakery"
             width={50}
             height={50}
-            className="w-12 h-12 md:w-14 md:h-14 rounded-full"
+            className="w-12 h-12 rounded-full md:w-14 md:h-14 rounded-full"
           />
           <span
             className={cn(
@@ -74,12 +77,20 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-          <Link href="/cart">
-            <Button className="bg-amber-500 hover:bg-amber-600 text-white rounded-full">
+          <Button
+            asChild
+            className="bg-amber-500 hover:bg-amber-600 text-white rounded-full relative"
+          >
+            <Link href="/cart">
               <ShoppingBag className="mr-2 h-4 w-4" />
-              Cart (0)
-            </Button>
-          </Link>
+              Cart ({state.itemCount})
+              {state.itemCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                  {state.itemCount}
+                </span>
+              )}
+            </Link>
+          </Button>
         </nav>
 
         {/* Mobile Navigation Toggle */}
@@ -115,12 +126,20 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <Link href="/cart">
-              <Button className="bg-amber-500 hover:bg-amber-600 text-white rounded-full w-full">
+            <Button
+              asChild
+              className="bg-amber-500 hover:bg-amber-600 text-white rounded-full w-full relative"
+            >
+              <Link href="/cart" onClick={() => setIsOpen(false)}>
                 <ShoppingBag className="mr-2 h-4 w-4" />
-                Cart (0)
-              </Button>
-            </Link>
+                Cart ({state.itemCount})
+                {state.itemCount > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                    {state.itemCount}
+                  </span>
+                )}
+              </Link>
+            </Button>
           </div>
         </div>
       )}

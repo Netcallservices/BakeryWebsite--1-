@@ -29,7 +29,7 @@ export default function CartPage() {
   const [discount, setDiscount] = useState(0);
   const [isOrdering, setIsOrdering] = useState(false);
 
-  const deliveryFee = state.total > 500 ? 0 : 50;
+  const deliveryFee = state.total > 500 ? 0 : 20;
   const finalTotal = state.total + deliveryFee - discount;
 
   const handleApplyPromo = () => {
@@ -352,10 +352,10 @@ export default function CartPage() {
                       </span>
                     </div>
 
-                    {state.total < 1000 && (
+                    {state.total < 500 && (
                       <div className="bg-amber-50 p-3 rounded-lg">
                         <p className="text-sm text-amber-700 font-medium">
-                          🎉 Add ₹{1000 - state.total} more for free delivery!
+                          🎉 Add ₹{500 - state.total} more for free delivery!
                         </p>
                       </div>
                     )}
@@ -458,7 +458,7 @@ export default function CartPage() {
                   <ul className="space-y-2 text-sm text-gray-700">
                     <li className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-amber-500 rounded-full"></div>
-                      Free delivery for orders above ₹1000
+                      Free delivery for orders above ₹500
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-amber-500 rounded-full"></div>

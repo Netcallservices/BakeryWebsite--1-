@@ -28,7 +28,7 @@ export const menuItems = [
     price: 49,
     description: "Soft sponge cake rolled with a delicious cream filling.",
     image:
-      "https://images.unsplash.com/photo-1602351447937-745cb720612f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2086&q=80",
+      "https://images.pexels.com/photos/32639324/pexels-photo-32639324.jpeg",
     category: "Quick Bites",
     isPopular: true,
   },
@@ -39,7 +39,7 @@ export const menuItems = [
     description:
       "Small, personalized cake perfect for individual celebrations.",
     image:
-      "https://images.unsplash.com/photo-1621303837174-89787a7d4729?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2036&q=80",
+      "https://images.pexels.com/photos/18054975/pexels-photo-18054975.jpeg",
     category: "Specialty Cakes",
     isPopular: true,
   },
@@ -60,7 +60,7 @@ export const menuItems = [
     price: 199,
     description: "Moist cake filled with sweet dates and a hint of cinnamon.",
     image:
-      "https://images.unsplash.com/photo-1614145121029-83a9f7b68bf4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2067&q=80",
+      "https://images.pexels.com/photos/26891169/pexels-photo-26891169.jpeg",
     category: "Specialty Cakes",
     isPopular: false,
   },
@@ -92,7 +92,7 @@ export const menuItems = [
     description:
       "Moist cake loaded with dried fruits and crunchy nuts for a delightful texture.",
     image:
-      "https://images.unsplash.com/photo-1607478900766-efe13248b125?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2076&q=80",
+      "https://images.pexels.com/photos/31377999/pexels-photo-31377999.jpeg",
     category: "Celebration Cakes",
     isPopular: true,
   },
@@ -103,7 +103,7 @@ export const menuItems = [
     description:
       "Tropical cake with fresh mango puree and light cream frosting.",
     image:
-      "https://images.unsplash.com/photo-1611293388250-580b08c4a145?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80",
+      "https://images.pexels.com/photos/29678557/pexels-photo-29678557.jpeg",
     category: "Celebration Cakes",
     isPopular: false,
   },
@@ -125,7 +125,7 @@ export const menuItems = [
     description:
       "Sweet and buttery cake with caramelized sugar frosting and crunchy toffee bits.",
     image:
-      "https://images.unsplash.com/photo-1542826438-bd32f43d626f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2092&q=80",
+      "https://www.shreemithai.com/cdn/shop/products/butterscotch-cake-191654.jpg?v=1707819767&width=1024",
     category: "Premium Cakes",
     isPopular: true,
   },
@@ -136,7 +136,7 @@ export const menuItems = [
     description:
       "Beautifully decorated cake shaped like a doll, perfect for children's birthdays.",
     image:
-      "https://images.unsplash.com/photo-1557925923-cd4648e211a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
+      "https://images.pexels.com/photos/30127917/pexels-photo-30127917.jpeg",
     category: "Premium Cakes",
     isPopular: false,
   },
@@ -147,7 +147,7 @@ export const menuItems = [
     description:
       "Fusion cake inspired by the classic Indian dessert, with cardamom and saffron flavors.",
     image:
-      "https://images.unsplash.com/photo-1535141192574-5d4897c12636?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1988&q=80",
+      "https://assets.giftalove.com/resources/common/giftimages/largeimage/blissful-rasmalai-cake.jpg",
     category: "Premium Cakes",
     isPopular: false,
   },
@@ -158,7 +158,7 @@ export const menuItems = [
     description:
       "Rich and velvety cake with cream cheese frosting, perfect for special occasions.",
     image:
-      "https://images.unsplash.com/photo-1616541823729-00fe0aacd32c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80",
+      "https://images.pexels.com/photos/17112299/pexels-photo-17112299.jpeg",
     category: "Premium Cakes",
     isPopular: true,
   },
@@ -180,7 +180,7 @@ export const menuItems = [
     description:
       "Intense chocolate cake with multiple layers of chocolate goodness.",
     image:
-      "https://images.unsplash.com/photo-1606890658317-7d14490b76fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2003&q=80",
+      "https://images.pexels.com/photos/32640566/pexels-photo-32640566.jpeg",
     category: "Premium Cakes",
     isPopular: false,
   },
@@ -191,7 +191,7 @@ export const menuItems = [
     description:
       "Classic German cake with layers of chocolate, cherries, and whipped cream.",
     image:
-      "https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2003&q=80",
+      "https://images.pexels.com/photos/15229830/pexels-photo-15229830.jpeg",
     category: "Premium Cakes",
     isPopular: true,
   },
@@ -214,7 +214,7 @@ export const menuItems = [
     description:
       "Classic donut with sweet strawberry glaze and colorful sprinkles.",
     image:
-      "https://images.unsplash.com/photo-1514517604298-cf80e0fb7f1e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+      "https://images.pexels.com/photos/14705210/pexels-photo-14705210.jpeg",
     category: "Donuts",
     isPopular: false,
   },

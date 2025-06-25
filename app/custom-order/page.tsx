@@ -330,10 +330,10 @@ export default function CustomOrderPage() {
                             Whipped Cream (Included)
                           </SelectItem>
                           <SelectItem value="cream-cheese">
-                            Cream Cheese (+₹100)
+                            Cream Cheese (+₹50)
                           </SelectItem>
                           <SelectItem value="fondant">
-                            Fondant (+₹100)
+                            Fondant (+₹50)
                           </SelectItem>
                         </SelectContent>
                       </Select>

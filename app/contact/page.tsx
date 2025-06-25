@@ -28,7 +28,7 @@ export default function ContactPage() {
               <h3 className="text-xl font-semibold text-primary mb-2">Phone</h3>
               <p className="text-gray-600 mb-2">+91 7001480849</p>
               <p className="text-gray-500 text-sm">
-                Monday - Saturday: 9am - 7pm
+                Monday - Saturday: 9am - 9pm
               </p>
             </div>
           </FadeIn>
@@ -169,14 +169,14 @@ export default function ContactPage() {
                     <Clock className="h-5 w-5 text-amber-500" />
                     <span className="font-medium">Monday - Friday</span>
                   </div>
-                  <span>9:00 AM - 8:00 PM</span>
+                  <span>9:00 AM - 9:00 PM</span>
                 </div>
                 <div className="flex justify-between items-center pb-2 border-b border-gray-200">
                   <div className="flex items-center gap-2">
                     <Clock className="h-5 w-5 text-amber-500" />
                     <span className="font-medium">Saturday</span>
                   </div>
-                  <span>10:00 AM - 6:00 PM</span>
+                  <span>10:00 AM - 8:00 PM</span>
                 </div>
                 <div className="flex justify-between items-center pb-2 border-b border-gray-200">
                   <div className="flex items-center gap-2">
