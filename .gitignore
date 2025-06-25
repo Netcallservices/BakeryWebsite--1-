@@ -134,3 +134,18 @@ dist
 
 .idea/
 .DS_Store
+
+
+# Next.js build cache
+.next/cache/
+cache/
+
+# Large webpack files
+*.pack
+
+# Build outputs that shouldn't be deployed
+.next/server/
+.next/static/chunks/webpack/
+
+# Vercel deployment artifacts
+.vercel/
