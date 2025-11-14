@@ -11,7 +11,7 @@ const nextConfig = {
   },
   experimental: {
     optimizePackageImports: ["framer-motion"],
-    optimizeCss: true,
+    optimizeCss: false,
   },
 
   // Optimize for Cloudflare Pages deployment
